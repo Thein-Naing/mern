@@ -3,11 +3,10 @@ import { getUsers, getUser, createUser, deleteUser, updateUser } from '../contro
 
 const router = express.Router();
 
-
-let users =[]
-console.log(users);
+let users =[];
+// console.log(users);
 // all routes here start with users so we do not need to add users in /.
-router.get('/', getUser);
+router.get('/', getUsers);
 
 router.post('/', createUser);
   // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d
@@ -19,7 +18,6 @@ router.post('/', createUser);
   // res.send(req.params);
 
 router.delete('/:id', deleteUser);
-
 
 router.patch('/:id', updateUser);
 
