@@ -30,7 +30,6 @@ router.post('/', (req, res)=> {
   const user = req.body;
 
   // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d
-
   // const userWithId = {...user, id: uuidv4() });
 
   users.push({...user, id: uuidv4() });
@@ -38,6 +37,15 @@ router.post('/', (req, res)=> {
   res.send(`User with the name ${ user.firstName } added to the DB!`)
 });
 
+router.get('/:id', (req, res) => {
+  // console.log(req.params);
+  // const id = req.params.id
+  const { id } = req.params;
 
+  const foundUser = users.find((user) => user.id === id);
+
+  // res.send(req.params);
+  res.send(foundUser);
+});
 
 export default router;
