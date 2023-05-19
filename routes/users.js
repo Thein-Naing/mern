@@ -18,17 +18,17 @@ const users =[
 
 
 ]
-
+console.log(users);
 // all routes here start with users so we do not need to add users in /.
-router.get('/', (req, res)=>{
-  console.log(users);
-
+router.get('/', (req, res)=> {
   res.send(users)
 })
 
-router.post('/', (req, res)=>{
-  console.log("Post");
-  res.send("Post")
+router.post('/', (req, res)=> {
+  const user = req.body;
+  users.push(user)
+
+  res.send(`User with the name ${ user.firstName } added to the DB!`)
 })
 
 
