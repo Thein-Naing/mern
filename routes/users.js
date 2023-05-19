@@ -25,4 +25,12 @@ router.get('/', (req, res)=>{
 
   res.send(users)
 })
+
+router.post('/', (req, res)=>{
+  console.log("Post");
+  res.send("Post")
+})
+
+
+
 export default router;
