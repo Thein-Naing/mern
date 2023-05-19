@@ -2,8 +2,27 @@ import express from 'express';
 
 const router = express.Router();
 
+
+const users =[
+  {
+    firstName: "John",
+    lastName: "Wick",
+    age: "58"
+        },
+
+  {
+    firstName: "Hellen",
+    lastName: "Wick",
+    age: "38"
+              }
+
+
+]
+
 // all routes here start with users so we do not need to add users in /.
 router.get('/', (req, res)=>{
-  res.send('Hi Mr Nobody')
+  console.log(users);
+
+  res.send(users)
 })
 export default router;
