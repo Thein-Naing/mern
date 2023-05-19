@@ -5,9 +5,10 @@ import bodyParser from 'body-parser';
 const app = express()
 
 app.get('/', (req, res)=> {
-  console.log("test")
+
   // res.json({"users": ["userOne", "userTwo", "userThree"]})
-})
+  res.send('Hello World')
+});
 const PORT = 5000;
 
 app.use(bodyParser.json());
